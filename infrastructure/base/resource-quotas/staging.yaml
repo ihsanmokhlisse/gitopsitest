@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: gitopsi-e2e-test-quota
+  namespace: gitopsi-e2e-test-staging
+  labels:
+    app.kubernetes.io/name: gitopsi-e2e-test
+    app.kubernetes.io/env: staging
+spec:
+  hard:
+    requests.cpu: "4"
+    requests.memory: "8Gi"
+    limits.cpu: "8"
+    limits.memory: "16Gi"
+    pods: "50"
+    services: "20"
+    configmaps: "50"
+    secrets: "50"
+
